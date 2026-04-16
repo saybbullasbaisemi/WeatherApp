@@ -1,25 +1,29 @@
-# 🌦️ WeatherApp - Django Project
+# 🌦️ WeatherApp - Django Web Application
 
-Indha project real-time weather data-vai display pannum. Idhai **Django** framework use panni build panni irukkaen.
+A sleek and responsive web application built using **Django** that provides real-time weather information for cities worldwide.
 
 ## 🚀 Live Demo
-Neenga indha project-ai live-ah paarkka keela ulla link-ai click pannunga:
+You can access the live application here:
 👉 **[Live Project Link](https://saybbulla.pythonanywhere.com)**
 
 ---
 
 ## ✨ Features
-* **Real-time Updates:** Current weather details-ai API vazhiya fetch pannum.
-* **Responsive Design:** Mobile matrum Desktop-la sariyaa vela seiyum.
-* **Easy Search:** City name pottu search panna weather details kedaikkum.
+* **Real-Time Data:** Fetches current temperature, humidity, and weather conditions using the OpenWeatherMap API.
+* **Dynamic Search:** Users can search for any city to get instant weather updates.
+* **Responsive UI:** Optimized for a seamless experience on both mobile and desktop devices.
+* **Robust Backend:** Built with Django to handle requests efficiently.
 
 ## 🛠️ Tech Stack
-* **Backend:** Django (Python)
-* **Frontend:** HTML, CSS
+* **Backend:** Python, Django
+* **Frontend:** HTML5, CSS3, JavaScript
 * **API:** OpenWeatherMap API
 * **Hosting:** PythonAnywhere
+* **Static Files:** Managed via WhiteNoise
 
-## ⚙️ How to run locally
-1. Repository-ah clone pannunga:
+## ⚙️ Local Installation
+If you want to run this project on your local machine:
+
+1. **Clone the repository:**
    ```bash
    git clone [https://github.com/saybbulla/WeatherApp.git](https://github.com/saybbulla/WeatherApp.git)
