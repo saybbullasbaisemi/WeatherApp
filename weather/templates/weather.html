@@ -1,0 +1,115 @@
+<style>
+    body {
+        background: linear-gradient(135deg, #00c6ff, #0072ff);
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        margin: 0;
+        color: white;
+    }
+
+    .container {
+        background: rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(10px);
+        padding: 30px;
+        border-radius: 20px;
+        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+        width: 350px;
+        text-align: center;
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        animation: fadeIn 1.2s ease-in-out;
+    }
+
+    input[type="text"] {
+        padding: 10px;
+        border-radius: 10px;
+        border: none;
+        width: 70%;
+        margin-bottom: 10px;
+        outline: none;
+    }
+
+    button {
+        padding: 10px 20px;
+        border-radius: 10px;
+        border: none;
+        background-color: #ff4b2b;
+        color: white;
+        cursor: pointer;
+        font-weight: bold;
+        transition: 0.3s;
+    }
+
+    button:hover {
+        background-color: #ff416c;
+        transform: scale(1.05);
+    }
+
+    .weather-info {
+        margin-top: 20px;
+        text-align: left;
+    }
+
+    .weather-info h3 {
+        font-size: 16px;
+        margin: 8px 0;
+        background: rgba(0, 0, 0, 0.1);
+        padding: 10px;
+        border-radius: 5px;
+    }
+
+    .icon-img {
+        width: 80px;
+        height: 80px;
+        animation: float 3s ease-in-out infinite;
+    }
+    @keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0px); }
+}
+
+button:active {
+    transform: scale(0.95);
+}
+</style>
+<div class="container">
+    <h1>Weather App</h1>
+    
+    <form method="post">
+        {% csrf_token %}
+        <input type="text" name="city" placeholder="Enter City Name...">
+        <button type="submit">Search</button>
+    </form>
+
+    {% if country_code %}
+    <div class="weather-info">
+        <center>
+            <img src="http://openweathermap.org/img/wn/{{icon}}@2x.png" class="icon-img">
+            <h2>{{temp}}</h2>
+        </center>
+        <h3>📍 Location: {{country_code}}</h3>
+        <h3>🌐 Coord: {{coordinate}}</h3>
+        <h3>💧 Humidity: {{humidity}}%</h3>
+        <h3>🌬️ Pressure: {{pressure}}</h3>
+        <h3>☁️ Condition: {{main}} ({{description}})</h3>
+    </div>
+    {% endif %}
+
+    {% if error %}
+        <p style="color: #ffcccb;">{{ error }}</p>
+    {% endif %}
+</div>
